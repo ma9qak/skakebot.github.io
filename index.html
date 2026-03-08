@@ -4438,7 +4438,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                 x-id="Header_36_12" x-dynamic="false"><span class="text-[rgb(0,174,239)]" x-file-name="Header"
                   x-line-number="37" x-column="14" x-component="span" x-id="Header_37_14"
                   x-dynamic="false">STAKE</span><span class="text-white" x-file-name="Header" x-line-number="38"
-                  x-column="14" x-component="span" x-id="Header_38_14" x-dynamic="false"> BOT</span></div>
+                  x-column="14" x-component="span" x-id="Header_38_14" x-dynamic="false"> DROP</span></div>
             </a>
             <nav class="hidden md:flex items-center gap-8" x-file-name="Header" x-line-number="43" x-column="10"
               x-component="nav" x-id="Header_43_10" x-dynamic="true" x-source-type="computed" x-source-editable="false">
@@ -4581,7 +4581,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                 <div class="text-center" x-file-name="Hero" x-line-number="72" x-column="12" x-component="div"
                   x-id="Hero_72_12" x-dynamic="false">
                   <div class="text-3xl md:text-4xl font-bold text-[rgb(218,255,1)] mb-2" x-file-name="Hero"
-                    x-line-number="73" x-column="14" x-component="div" x-id="Hero_73_14" x-dynamic="false">100+</div>
+                    x-line-number="73" x-column="14" x-component="div" x-id="Hero_73_14" x-dynamic="false">1000+</div>
                   <div class="text-sm text-[rgb(161,161,170)]" x-file-name="Hero" x-line-number="74" x-column="14"
                     x-component="div" x-id="Hero_74_14" x-dynamic="false">Користувачів</div>
                 </div>
@@ -6878,187 +6878,114 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     data-cf-beacon="{&quot;rayId&quot;:&quot;9d8cc44a7d6a95aa&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;7f7b
   <script>
 (function() {
-  "use strict";
-
-  // ===== ПЛАВНА ПРОКРУТКА =====
-  function scrollToSection(selector) {
-    var target = document.querySelector(selector);
-    if (target) {
-      var top = target.getBoundingClientRect().top + window.pageYOffset - 90;
-      window.scrollTo({ top: top, behavior: "smooth" });
-    }
-  }
-
-  // ===== CTA КНОПКИ =====
-  function addButtonListeners() {
-    document.querySelectorAll('button[data-action="download"]').forEach(function(btn) {
-      btn.addEventListener("click", function() {
-        // ==============================
-        // ПОСИЛАННЯ ДЛЯ СКАЧУВАННЯ:
-        // Розкоментуйте рядок нижче та вставте свій URL
-        // window.open("https://example.com/StakeBot.zip", "_blank");
-        // ==============================
-        scrollToSection("#download");
-      });
-    });
-    document.querySelectorAll('button[data-action="buy"]').forEach(function(btn) {
-      btn.addEventListener("click", function() {
-        scrollToSection("#pricing");
-      });
-    });
-  }
-
-  // ===== АКОРДЕОН (ІНСТРУКЦІЇ ДЛЯ БОТІВ) =====
-  var accordionContent = {
-    "Рибалка": [
-      "🎯 <b>Мета:</b> Автоматичний фарм риби на STAKE RP.",
-      "1. Запустіть StakeBot та відкрийте вкладку \"Рибалка\".",
-      "2. Натисніть <b>F8</b> та клікніть ЛКМ на точку де стоїть персонаж.",
-      "3. Клікніть ЛКМ на місце де ловиться риба (берег).",
-      "4. Натисніть <b>F9</b> для запуску — бот почне автоматично рибалити.",
-      "⚠️ Переконайтесь що персонаж тримає вудку перед запуском."
-    ],
-    "Качалка": [
-      "🎯 <b>Мета:</b> Автоматичне прокачування фізичних навичок.",
-      "1. Зайдіть у спортзал та підійдіть до тренажера.",
-      "2. Відкрийте вкладку \"Качалка\" у StakeBot.",
-      "3. Натисніть <b>F8</b> та вкажіть точку стояння біля тренажера.",
-      "4. Виберіть тип вправи зі списку.",
-      "5. Натисніть <b>F9</b> — бот почне тренування.",
-      "⚠️ Рекомендовано увімкнути Анті-AFK щоб не вилетіти."
-    ],
-    "Кар'єр": [
-      "🎯 <b>Мета:</b> Автоматичне видобування руди в кар'єрі.",
-      "1. Прийдіть на кар'єр та візьміть потрібний інструмент.",
-      "2. Відкрийте вкладку \"Кар'єр\" у StakeBot.",
-      "3. Натисніть <b>F8</b> та позначте точки маршруту ЛКМ.",
-      "4. Вкажіть кількість точок та тип ресурсу.",
-      "5. Натисніть <b>F9</b> — бот почне видобуток.",
-      "⚠️ Налаштуйте чутливість розпізнавання під ваш монітор."
-    ],
-    "Лісоруб": [
-      "🎯 <b>Мета:</b> Автоматична рубка дерев та збір деревини.",
-      "1. Зайдіть у ліс з сокирою в руках.",
-      "2. Відкрийте вкладку \"Лісоруб\" у StakeBot.",
-      "3. Натисніть <b>F8</b> та поставте точки біля дерев.",
-      "4. Налаштуйте затримку між ударами (рекомендовано 0.8–1.2с).",
-      "5. Натисніть <b>F9</b> — бот розпочне рубку.",
-      "⚠️ PRO режим дозволяє записати до 20 точок маршруту."
-    ]
-  };
-
-  function setupAccordion() {
-    var items = document.querySelectorAll("[x-component='AccordionItem']");
-    if (!items.length) items = document.querySelectorAll("[data-orientation='vertical'][data-state]");
-
-    items.forEach(function(item) {
-      var trigger = item.querySelector("button[aria-controls]");
-      var panel = trigger ? document.getElementById(trigger.getAttribute("aria-controls")) : null;
-      if (!trigger || !panel) return;
-
-      var nameSpan = trigger.querySelector("span.text-lg");
-      var botName = nameSpan ? nameSpan.textContent.trim() : null;
-
-      // Заповнюємо контент
-      if (botName && accordionContent[botName] && panel.innerHTML.trim() === "") {
-        var inner = document.createElement("div");
-        inner.style.cssText = "padding: 0 24px 20px;";
-        var heading = document.createElement("p");
-        heading.style.cssText = "color: rgb(218,255,1); font-weight: 600; font-size: 14px; margin-bottom: 12px;";
-        heading.textContent = "Покрокова інструкція:";
-        inner.appendChild(heading);
-        var ol = document.createElement("ol");
-        ol.style.cssText = "list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;";
-        accordionContent[botName].forEach(function(step) {
-          var li = document.createElement("li");
-          li.innerHTML = step;
-          li.style.cssText = "color:rgb(218,218,218); font-size:14px; line-height:1.6; padding:8px 12px; background:rgba(255,255,255,0.03); border-radius:8px;";
-          ol.appendChild(li);
-        });
-        inner.appendChild(ol);
-        panel.appendChild(inner);
-      }
-
-      // Клік — toggle
-      trigger.addEventListener("click", function() {
-        var isOpen = item.getAttribute("data-state") === "open";
-        if (isOpen) {
-          closeItem(item, trigger, panel);
-        } else {
-          // Закрити всі
-          document.querySelectorAll("[data-orientation='vertical'][data-state='open']").forEach(function(oi) {
-            var oT = oi.querySelector("button[aria-controls]");
-            var oP = oT ? document.getElementById(oT.getAttribute("aria-controls")) : null;
-            closeItem(oi, oT, oP);
+  " use strict"; //=====ПЛАВНА ПРОКРУТКА=====function scrollToSection(selector) { var
+    target=document.querySelector(selector); if (target) { var top=target.getBoundingClientRect().top +
+    window.pageYOffset - 90; window.scrollTo({ top: top, behavior: "smooth" }); } } //=====CTA КНОПКИ=====function
+    addButtonListeners() { document.querySelectorAll('button[data-action="download" ]').forEach(function(btn) {
+    btn.addEventListener("click", function() { if (btn.textContent.includes("Завантажити (Windows)")) {
+    //==============================// ПОСИЛАННЯ ДЛЯ СКАЧУВАННЯ: // Розкоментуйте рядок нижче та вставте свій URL //
+    window.open("https://example.com/StakeBot.zip", "_blank" ); //==============================} else {
+    scrollToSection("#download"); } }); }); document.querySelectorAll('button[data-action="buy"
+    ]').forEach(function(btn) { btn.addEventListener("click", function() { scrollToSection("#pricing"); }); }); }
+    //=====АКОРДЕОН (ІНСТРУКЦІЇ ДЛЯ БОТІВ)=====var accordionContent={ "Рибалка" :
+    [ "🎯 <b>Мета:</b > Автоматичний фарм риби на STAKE RP." , "1. Запустіть StakeBot та відкрийте вкладку \"
+      Рибалка\".", "2. Натисніть <b>F8</b> та клікніть ЛКМ на точку де стоїть персонаж."
+        , "3. Клікніть ЛКМ на місце де ловиться риба (берег)."
+        , "4. Натисніть <b>F9</b> для запуску — бот почне автоматично рибалити."
+        , "⚠️ Переконайтесь що персонаж тримає вудку перед запуском." ], "Качалка" : ["🎯 <b>Мета:</b> Автоматичне прокачування фізичних навичок.", "1. Зайдіть у спортзал та підійдіть до тренажера."
+          , "2. Відкрийте вкладку \" Качалка\" у StakeBot.", "3. Натисніть <b>F8</b> та вкажіть точку стояння біля тренажера."
+          , "4. Виберіть тип вправи зі списку.", "5. Натисніть <b>F9</b> — бот почне тренування."
+          , "⚠️ Рекомендовано увімкнути Анті-AFK щоб не вилетіти."], "Кар'єр" :
+      ["🎯 <b>Мета:</b> Автоматичне видобування руди в кар'єрі."
+        , "1. Прийдіть на кар'єр та візьміть потрібний інструмент.", "2. Відкрийте вкладку \" Кар'єр\" у
+    StakeBot.", "3. Натисніть < b > F8</b > та позначте точки маршруту ЛКМ." , "4. Вкажіть кількість точок та тип ресурсу."
+        , "5. Натисніть <b>F9</b> — бот почне видобуток.", "⚠️ Налаштуйте чутливість розпізнавання під ваш монітор."
+      ], "Лісоруб" : ["🎯 <b>Мета:</b> Автоматична рубка дерев та збір деревини.", "1. Зайдіть у ліс з сокирою в руках."
+        , "2. Відкрийте вкладку \" Лісоруб\" у StakeBot.", "3. Натисніть <b>F8</b> та поставте точки біля дерев."
+        , "4. Налаштуйте затримку між ударами (рекомендовано 0.8–1.2с).", "5. Натисніть <b>F9</b> — бот розпочне рубку."
+        , "⚠️ PRO режим дозволяє записати до 20 точок маршруту."] }; function setupAccordion() {
+          var
+            items = document.querySelectorAll("[x-component='AccordionItem' ]"); if (!items.length)
+            items = document.querySelectorAll("[data-orientation='vertical' ][data-state]"); items.forEach(function (item) {
+              var
+                trigger = item.querySelector("button[aria-controls]"); var panel = trigger ?
+                  document.getElementById(trigger.getAttribute("aria-controls")) : null; if (!trigger || !panel) return; var
+                    nameSpan = trigger.querySelector("span.text-lg"); var botName = nameSpan ? nameSpan.textContent.trim() : null; //
+    Підготовка панелі: видаляємо зайві класи анімації Radix UI бо без React вони не працюють
+              panel.classList.remove("data-[state=closed]:animate-accordion-up", "data-[state=open]:animate-accordion-down"); //
+    Встановлюємо початкові стилі для JS - анімації
+              panel.style.transition = "max-height 0.3s ease-in-out, opacity 0.3s ease-in-out"; panel.style.maxHeight = "0px";
+              panel.style.opacity = "0"; panel.style.overflow = "hidden"; panel.hidden = false; // Заповнюємо контент if (botName &&
+              accordionContent[botName] && panel.innerHTML.trim() === "" ) {
+            var inner = document.createElement("div");
+            inner.style.cssText = "padding: 0 24px 20px;"; var heading = document.createElement("p");
+            heading.style.cssText = "color: rgb(218,255,1); font-weight: 600; font-size: 14px; margin-bottom: 12px;";
+            heading.textContent = "Покрокова інструкція:"; inner.appendChild(heading); var ol = document.createElement("ol");
+            ol.style.cssText = "list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;";
+            accordionContent[botName].forEach(function (step) {
+              var li = document.createElement("li"); li.innerHTML = step;
+              li.style.cssText = "color:rgb(218,218,218); font-size:14px; line-height:1.6; padding:8px 12px; background:rgba(255,255,255,0.03); border-radius:8px;"
+                ; ol.appendChild(li);
+            }); inner.appendChild(ol); panel.appendChild(inner);
+          } // Клік — toggle
+          trigger.addEventListener("click", function () {
+            var isOpen = item.getAttribute("data-state") === "open"; if (isOpen) {
+              closeItem(item, trigger, panel);
+            } else { // Закрити всі відкриті
+              document.querySelectorAll("[data-orientation='vertical' ][data-state='open' ]").forEach(function (openItem) {
+                var
+                  oTrigger = openItem.querySelector("button[aria-controls]"); var oPanel = oTrigger ?
+                    document.getElementById(oTrigger.getAttribute("aria-controls")) : null; closeItem(openItem, oTrigger, oPanel);
+              });
+              // Відкрити поточний openItem(item, trigger, panel); } }); }); } function closeItem(item, trigger, panel) { if
+              (!item) return; item.setAttribute("data-state", "closed"); if (trigger) {
+                trigger.setAttribute("data-state", "closed"); trigger.setAttribute("aria-expanded", "false");
+              } var
+                h3 = item.querySelector("h3"); if (h3) h3.setAttribute("data-state", "closed"); if (panel) {
+                  panel.setAttribute("data-state", "closed"); panel.style.maxHeight = "0px"; panel.style.opacity = "0";
+                }
+            } function
+              openItem(item, trigger, panel) {
+              item.setAttribute("data-state", "open"); if (trigger) {
+                trigger.setAttribute("data-state", "open"); trigger.setAttribute("aria-expanded", "true");
+              } var
+                h3 = item.querySelector("h3"); if (h3) h3.setAttribute("data-state", "open"); if (panel) {
+                  panel.setAttribute("data-state", "open"); panel.style.maxHeight = panel.scrollHeight + "px"; // JS анімація висоти
+                  panel.style.opacity = "1";
+                }
+            } //=====МОБІЛЬНЕ МЕНЮ=====function setupMobileMenu() { var
+            menuBtn = document.querySelector("button.md\\:hidden"); if (!menuBtn) return; var mm = document.createElement("div");
+            mm.id = "mobile-menu";
+            mm.style.cssText = "display:none;position:fixed;top:80px;left:0;right:0;background:rgba(17,17,19,0.98);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.1);z-index:49;padding:16px 24px 24px;flex-direction:column;gap:4px;"
+              ;
+            [{ h: "#bots", t: "Боти" }, { h: "#features", t: "Можливості" }, { h: "#pricing", t: "Тарифи" }, { h: "#instructions", t: "Інструкції" }, { h: "#download", t: "Завантажити" }].forEach(function (l) {
+              var a = document.createElement("a"); a.href = l.h; a.textContent = l.t;
+              a.style.cssText = "color:rgb(218,218,218);text-decoration:none;font-size:16px;font-weight:500;padding:12px 16px;border-radius:10px;transition:all 0.2s ease;display:block;"
+                ; a.onmouseover = function () { this.style.color = "rgb(218,255,1)"; this.style.background = "rgba(218,255,1,0.08)"; };
+              a.onmouseout = function () { this.style.color = "rgb(218,218,218)"; this.style.background = "transparent"; };
+              a.onclick = function () { mm.style.display = "none"; isOpen = false; }; mm.appendChild(a);
+            }); var
+              hdr = document.querySelector("header"); if (hdr && hdr.parentNode) hdr.parentNode.insertBefore(mm, hdr.nextSibling);
+            var isOpen = false; menuBtn.onclick = function () { isOpen = !isOpen; mm.style.display = isOpen ? "flex" : "none"; };
+            document.addEventListener("click", function (e) {
+              if (isOpen && !mm.contains(e.target) && !menuBtn.contains(e.target)) {
+                isOpen = false; mm.style.display = "none"
+                  ;
+              }
+            });
+          } //=====ПЛАВНА ПРОКРУТКА ДЛЯ ВСІХ ANCHOR ПОСИЛАНЬ=====function setupSmoothScroll() {
+    document.querySelectorAll('a[href^="#" ]').forEach(function (a) {
+            a.addEventListener("click", function (e) {
+              var
+                href = this.getAttribute("href"); if (href === "#") return; var target = document.querySelector(href); if (target) {
+                  e.preventDefault(); scrollToSection(href);
+                }
+            });
           });
-          openItem(item, trigger, panel);
-        }
-      });
-    });
-  }
-
-  function closeItem(item, trigger, panel) {
-    item.setAttribute("data-state", "closed");
-    if (trigger) { trigger.setAttribute("data-state", "closed"); trigger.setAttribute("aria-expanded", "false"); }
-    var h3 = item.querySelector("h3"); if (h3) h3.setAttribute("data-state", "closed");
-    if (panel) { panel.setAttribute("data-state", "closed"); panel.setAttribute("hidden", ""); panel.style.height = "0"; }
-  }
-
-  function openItem(item, trigger, panel) {
-    item.setAttribute("data-state", "open");
-    if (trigger) { trigger.setAttribute("data-state", "open"); trigger.setAttribute("aria-expanded", "true"); }
-    var h3 = item.querySelector("h3"); if (h3) h3.setAttribute("data-state", "open");
-    if (panel) { panel.removeAttribute("hidden"); panel.setAttribute("data-state", "open"); panel.style.height = "auto"; }
-  }
-
-  // ===== МОБІЛЬНЕ МЕНЮ =====
-  function setupMobileMenu() {
-    var menuBtn = document.querySelector("button.md\\:hidden");
-    if (!menuBtn) return;
-    var mm = document.createElement("div");
-    mm.id = "mobile-menu";
-    mm.style.cssText = "display:none;position:fixed;top:80px;left:0;right:0;background:rgba(17,17,19,0.98);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.1);z-index:49;padding:16px 24px 24px;flex-direction:column;gap:4px;";
-    [{h:"#bots",t:"Боти"},{h:"#features",t:"Можливості"},{h:"#pricing",t:"Тарифи"},{h:"#instructions",t:"Інструкції"},{h:"#download",t:"Завантажити"}].forEach(function(l) {
-      var a = document.createElement("a");
-      a.href = l.h; a.textContent = l.t;
-      a.style.cssText = "color:rgb(218,218,218);text-decoration:none;font-size:16px;font-weight:500;padding:12px 16px;border-radius:10px;transition:all 0.2s ease;display:block;";
-      a.onmouseover = function(){this.style.color="rgb(218,255,1)";this.style.background="rgba(218,255,1,0.08)";};
-      a.onmouseout = function(){this.style.color="rgb(218,218,218)";this.style.background="transparent";};
-      a.onclick = function(){mm.style.display="none";isOpen=false;};
-      mm.appendChild(a);
-    });
-    var hdr = document.querySelector("header");
-    if (hdr && hdr.parentNode) hdr.parentNode.insertBefore(mm, hdr.nextSibling);
-    var isOpen = false;
-    menuBtn.onclick = function(){isOpen=!isOpen;mm.style.display=isOpen?"flex":"none";};
-    document.addEventListener("click",function(e){if(isOpen&&!mm.contains(e.target)&&!menuBtn.contains(e.target)){isOpen=false;mm.style.display="none";}});
-  }
-
-  // ===== ПЛАВНА ПРОКРУТКА ДЛЯ ВСІХ ANCHOR ПОСИЛАНЬ =====
-  function setupSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-      a.addEventListener("click", function(e) {
-        var href = this.getAttribute("href");
-        if (href === "#") return;
-        var target = document.querySelector(href);
-        if (target) { e.preventDefault(); scrollToSection(href); }
-      });
-    });
-  }
-
-  // ===== ІНІЦІАЛІЗАЦІЯ =====
-  function init() {
-    addButtonListeners();
-    setupAccordion();
-    setupMobileMenu();
-    setupSmoothScroll();
-  }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else { init(); }
-})();
-  </script>
+        } //=====ІНІЦІАЛІЗАЦІЯ=====function init() {
+      addButtonListeners(); setupAccordion(); setupMobileMenu(); setupSmoothScroll(); } if
+        (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", init); } else { init(); } }) ();
+    </script>
 </body>
+
 </html>
-
-
