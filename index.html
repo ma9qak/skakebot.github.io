@@ -4515,7 +4515,362 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
     /* Плавніший скрол на iOS */
     main { -webkit-overflow-scrolling: touch; }
-</style>
+
+    /* ============================================================
+       СВІТЛА ТЕМА — [data-theme="light"]
+    ============================================================ */
+
+    /* --- Загальні кольори --- */
+    [data-theme="light"] {
+      --bg-primary:   #f0f2f5;
+      --bg-secondary: #ffffff;
+      --bg-card:      #ffffff;
+      --text-primary: #0d0d0f;
+      --text-secondary: #4a4a5a;
+      --text-muted:   #7a7a8a;
+      --border:       rgba(0,0,0,0.09);
+      --accent:       rgb(100,130,0);
+      --accent-bg:    rgba(100,130,0,0.08);
+    }
+
+    /* --- HTML / Body --- */
+    [data-theme="light"] html,
+    [data-theme="light"] body,
+    [data-theme="light"] .App {
+      background-color: #f0f2f5 !important;
+      color: #0d0d0f !important;
+    }
+
+    /* --- Всі секції --- */
+    [data-theme="light"] section {
+      background-color: #f0f2f5 !important;
+    }
+    [data-theme="light"] section:nth-child(even),
+    [data-theme="light"] #features,
+    [data-theme="light"] #instructions {
+      background-color: #ffffff !important;
+    }
+
+    /* --- Header --- */
+    [data-theme="light"] header {
+      background-color: rgba(240,242,245,0.95) !important;
+      border-bottom-color: rgba(0,0,0,0.1) !important;
+    }
+    [data-theme="light"] header a,
+    [data-theme="light"] nav a {
+      color: #1a1a2e !important;
+    }
+    [data-theme="light"] nav a:hover { color: rgb(100,130,0) !important; }
+
+    /* --- Footer --- */
+    [data-theme="light"] footer {
+      background-color: #ffffff !important;
+      border-top-color: rgba(0,0,0,0.1) !important;
+    }
+
+    /* --- Текст --- */
+    [data-theme="light"] h1,[data-theme="light"] h2,
+    [data-theme="light"] h3,[data-theme="light"] h4,
+    [data-theme="light"] h5,[data-theme="light"] h6 { color: #0d0d0f !important; }
+    [data-theme="light"] p  { color: #3a3a4a !important; }
+    [data-theme="light"] span:not(.save-pill):not([class*="text-[rgb(218,255,1)"]) { color: inherit; }
+    [data-theme="light"] .text-white { color: #0d0d0f !important; }
+    [data-theme="light"] .text-\[rgb\(218\,218\,218\)\] { color: #3a3a4a !important; }
+    [data-theme="light"] .text-\[rgb\(161\,161\,170\)\] { color: #5a5a6a !important; }
+    [data-theme="light"] .text-\[rgb\(100\,100\,110\)\] { color: #6a6a7a !important; }
+    [data-theme="light"] .text-\[rgb\(90\,90\,100\)\]   { color: #7a7a8a !important; }
+
+    /* --- Акцентний жовто-зелений → темно-оливковий --- */
+    [data-theme="light"] .text-\[rgb\(218\,255\,1\)\] { color: rgb(90,115,0) !important; }
+    [data-theme="light"] .bg-\[rgb\(218\,255\,1\)\]  { background-color: rgb(90,115,0) !important; color: #fff !important; }
+    [data-theme="light"] .bg-\[rgb\(218\,255\,1\)\]:hover { background-color: rgb(70,95,0) !important; }
+    [data-theme="light"] .text-\[rgb\(17\,17\,19\)\] { color: #fff !important; }
+    [data-theme="light"] .hover\:bg-\[rgb\(166\,190\,21\)\]:hover { background-color: rgb(70,95,0) !important; }
+    [data-theme="light"] .save-pill { background: rgb(90,115,0) !important; color: #fff !important; }
+    [data-theme="light"] .how-step-num { background: rgb(90,115,0) !important; color: #fff !important; }
+
+    /* --- Карточки / блоки --- */
+    [data-theme="light"] .bg-\[rgb\(26\,28\,30\)\] { background-color: #ffffff !important; }
+    [data-theme="light"] .bg-\[rgb\(17\,17\,19\)\] { background-color: #f0f2f5 !important; }
+    [data-theme="light"] .bg-\[rgba\(26\,28\,30\,0\.85\)\] { background-color: rgba(255,255,255,0.95) !important; }
+    [data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.1\)\] { border-color: rgba(0,0,0,0.1) !important; }
+    [data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.07\)\] { border-color: rgba(0,0,0,0.07) !important; }
+    [data-theme="light"] .border-\[rgba\(63\,63\,63\)\] { border-color: rgba(0,0,0,0.2) !important; }
+
+    /* --- Review cards --- */
+    [data-theme="light"] .review-card {
+      background: #ffffff !important;
+      border-color: rgba(0,0,0,0.08) !important;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    [data-theme="light"] .review-card:hover { border-color: rgba(90,115,0,0.4) !important; }
+    [data-theme="light"] .review-name { color: #0d0d0f !important; }
+    [data-theme="light"] .review-text { color: #3a3a4a !important; }
+    [data-theme="light"] .review-stars { color: rgb(90,115,0) !important; }
+    [data-theme="light"] .review-date  { color: #8a8a9a !important; }
+
+    /* --- Pricing cards --- */
+    [data-theme="light"] .plan-face {
+      background: #ffffff !important;
+      border-color: rgba(0,0,0,0.1) !important;
+    }
+    [data-theme="light"] #cyl-pro .plan-face {
+      border-color: rgb(90,115,0) !important;
+      box-shadow: 0 10px 30px rgba(90,115,0,0.15) !important;
+    }
+
+    /* --- Accordion --- */
+    [data-theme="light"] .space-y-4 > div {
+      background: #ffffff !important;
+      border-color: rgba(0,0,0,0.1) !important;
+    }
+    [data-theme="light"] button[aria-expanded] {
+      background: #ffffff !important;
+      color: #0d0d0f !important;
+    }
+
+    /* --- FAQ CTA --- */
+    [data-theme="light"] .faq-cta-wrap {
+      background: linear-gradient(135deg, rgba(90,115,0,0.07) 0%, rgba(90,115,0,0.02) 100%) !important;
+      border-color: rgba(90,115,0,0.2) !important;
+    }
+    [data-theme="light"] .faq-link-btn {
+      background: rgba(0,0,0,0.04) !important;
+      border-color: rgba(0,0,0,0.1) !important;
+      color: #2a2a3a !important;
+    }
+    [data-theme="light"] .faq-link-btn:hover {
+      background: rgba(90,115,0,0.08) !important;
+      border-color: rgba(90,115,0,0.3) !important;
+      color: rgb(90,115,0) !important;
+    }
+
+    /* --- How-island --- */
+    [data-theme="light"] #how-island > div {
+      background: rgba(255,255,255,0.97) !important;
+      border-color: rgba(90,115,0,0.2) !important;
+    }
+    [data-theme="light"] .how-step-icon {
+      background: rgba(90,115,0,0.07) !important;
+      border-color: rgba(90,115,0,0.2) !important;
+    }
+
+    /* --- How-it-works button --- */
+    [data-theme="light"] #how-it-works-btn {
+      border-color: rgba(0,0,0,0.15) !important;
+      background: rgba(0,0,0,0.04) !important;
+      color: #3a3a4a !important;
+    }
+    [data-theme="light"] #how-it-works-btn:hover {
+      background: rgba(90,115,0,0.08) !important;
+      border-color: rgba(90,115,0,0.35) !important;
+      color: rgb(90,115,0) !important;
+    }
+
+    /* --- Кнопка "Купити" outline --- */
+    [data-theme="light"] button.bg-transparent {
+      color: #0d0d0f !important;
+      border-color: rgba(0,0,0,0.2) !important;
+    }
+
+    /* --- Period toggle --- */
+    [data-theme="light"] .period-toggle-btn {
+      border-color: rgba(90,115,0,0.35) !important;
+      background: rgba(90,115,0,0.05) !important;
+      color: #3a3a4a !important;
+    }
+    [data-theme="light"] .period-toggle-btn:hover {
+      background: rgba(90,115,0,0.12) !important;
+      color: rgb(90,115,0) !important;
+    }
+    [data-theme="light"] .period-toggle-btn.back-btn {
+      border-color: rgba(0,0,0,0.12) !important;
+      color: #7a7a8a !important;
+    }
+
+    /* --- Scroll-top btn --- */
+    [data-theme="light"] #scroll-top-btn {
+      background: rgb(90,115,0) !important;
+      color: #fff !important;
+      box-shadow: 0 4px 16px rgba(90,115,0,0.35) !important;
+    }
+
+    /* --- Theme toggle button --- */
+    [data-theme="light"] #theme-toggle {
+      border-color: rgba(0,0,0,0.15) !important;
+      background: rgba(0,0,0,0.06) !important;
+      color: #0d0d0f !important;
+    }
+
+    /* --- Фонова сітка — темніша на білому --- */
+    [data-theme="light"] body::after {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px) !important;
+    }
+
+    /* --- Градієнт прапора — адаптований --- */
+    [data-theme="light"] section,
+    [data-theme="light"] footer {
+      background-image:
+        radial-gradient(ellipse 90% 60% at 10% 20%, rgba(0,91,187,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 50% at 90% 80%, rgba(180,140,0,0.07) 0%, transparent 55%) !important;
+    }
+
+    /* --- Burger menu кнопка --- */
+    [data-theme="light"] .md\:hidden { color: #0d0d0f !important; }
+
+    /* --- Borders на alert boxes --- */
+    [data-theme="light"] .border-\[rgba\(239\,68\,68\,0\.5\)\] { border-color: rgba(200,50,50,0.5) !important; }
+
+    /* --- Placeholder icons bg --- */
+    [data-theme="light"] .bg-\[rgba\(218\,255\,1\,0\.1\)\]  { background-color: rgba(90,115,0,0.08) !important; }
+    [data-theme="light"] .bg-\[rgba\(218\,255\,1\,0\.07\)\] { background-color: rgba(90,115,0,0.07) !important; }
+
+    /* --- SVG stroke inherit --- */
+    [data-theme="light"] svg[stroke="rgb(218,255,1)"] { stroke: rgb(90,115,0) !important; }
+
+  
+    /* Плавний перехід між темами */
+    html { transition: background-color 0.3s ease; }
+    section, footer, header { transition: background-color 0.3s ease !important; }
+
+  
+    /* ============================================================
+       СВІТЛА ТЕМА — ВИПРАВЛЕННЯ ЧИТАБЕЛЬНОСТІ
+    ============================================================ */
+
+    /* Акордеон — inline style color override */
+    [data-theme="light"] #radix-_r_1_ li,
+    [data-theme="light"] #radix-_r_3_ li,
+    [data-theme="light"] #radix-_r_5_ li,
+    [data-theme="light"] #radix-_r_7_ li {
+      color: #2a2a3a !important;
+    }
+    [data-theme="light"] #radix-_r_1_ p,
+    [data-theme="light"] #radix-_r_3_ p,
+    [data-theme="light"] #radix-_r_5_ p,
+    [data-theme="light"] #radix-_r_7_ p {
+      color: rgb(80,110,0) !important;
+    }
+    /* Акордеон — весь контент */
+    [data-theme="light"] [id^="radix-_r_"] * {
+      color: #2a2a3a !important;
+    }
+    [data-theme="light"] [id^="radix-_r_"] p:first-child {
+      color: rgb(80,110,0) !important;
+    }
+
+    /* "економія XXX₴" — inline yellow span */
+    [data-theme="light"] span[style*="rgb(218,255,1)"],
+    [data-theme="light"] span[style*="218,255,1"] {
+      color: rgb(80,110,0) !important;
+    }
+
+    /* Всі inline style color white → dark */
+    [data-theme="light"] [style*="color:white"],
+    [data-theme="light"] [style*="color: white"] {
+      color: #0d0d0f !important;
+    }
+    [data-theme="light"] [style*="color:rgb(218,218,218)"],
+    [data-theme="light"] [style*="color: rgb(218, 218, 218)"] {
+      color: #2a2a3a !important;
+    }
+    [data-theme="light"] [style*="color:rgb(200,200,210)"],
+    [data-theme="light"] [style*="color: rgb(200, 200, 210)"] {
+      color: #3a3a4a !important;
+    }
+
+    /* Footer соціальні іконки */
+    [data-theme="light"] footer a[class*="rounded-full"],
+    [data-theme="light"] footer a[class*="bg-[rgba(255,255,255"] {
+      background: rgba(0,0,0,0.07) !important;
+      border-color: rgba(0,0,0,0.15) !important;
+      color: #1a1a2e !important;
+    }
+    [data-theme="light"] footer a[class*="rounded-full"]:hover {
+      background: rgba(80,110,0,0.12) !important;
+      border-color: rgba(80,110,0,0.4) !important;
+      color: rgb(80,110,0) !important;
+    }
+    /* Footer all links */
+    [data-theme="light"] footer a { color: #3a3a4a !important; }
+    [data-theme="light"] footer a:hover { color: rgb(80,110,0) !important; }
+    [data-theme="light"] footer p { color: #5a5a6a !important; }
+    [data-theme="light"] footer h3,
+    [data-theme="light"] footer h4 { color: #0d0d0f !important; }
+    /* Footer icon SVGs */
+    [data-theme="light"] footer svg { stroke: currentColor !important; }
+
+    /* "30 днів" та інші жовті таблетки */
+    [data-theme="light"] .bg-\[rgb\(218\,255\,1\)\] {
+      background-color: rgb(80,110,0) !important;
+      color: #ffffff !important;
+    }
+
+    /* Гарячі клавіші — F9, F10 etc key badges */
+    [data-theme="light"] .bg-\[rgba\(218\,255\,1\,0\.1\)\] span,
+    [data-theme="light"] .bg-\[rgba\(218\,255\,1\,0\.1\)\] {
+      background-color: rgba(80,110,0,0.1) !important;
+      color: rgb(80,110,0) !important;
+    }
+
+    /* Червоний alert box */
+    [data-theme="light"] .bg-gradient-to-r.from-\[rgba\(239\,68\,68\,0\.1\)\] {
+      background: rgba(220,50,50,0.06) !important;
+    }
+    [data-theme="light"] .text-\[rgb\(239\,68\,68\)\] { color: rgb(180,30,30) !important; }
+    [data-theme="light"] .bg-\[rgba\(239\,68\,68\,0\.2\)\] { background: rgba(180,30,30,0.12) !important; }
+
+    /* Download section — gradient bg */
+    [data-theme="light"] .bg-gradient-to-b { background: #f0f2f5 !important; }
+    [data-theme="light"] #download .bg-\[rgb\(26\,28\,30\)\] { background: #ffffff !important; }
+
+    /* Системні вимоги — мінімальні/рекомендовані заголовки */
+    [data-theme="light"] .text-\[rgb\(218\,255\,1\)\] { color: rgb(70,100,0) !important; }
+
+    /* Кнопки outline (Спробувати безкоштовно, Купити зараз outline) */
+    [data-theme="light"] button[class*="bg-transparent"],
+    [data-theme="light"] button[class*="border-2"] {
+      color: #0d0d0f !important;
+      border-color: rgba(0,0,0,0.25) !important;
+    }
+    [data-theme="light"] button[class*="border-2"]:hover {
+      border-color: rgb(80,110,0) !important;
+      color: rgb(80,110,0) !important;
+      background-color: rgba(80,110,0,0.06) !important;
+    }
+
+    /* How-step icons SVG */
+    [data-theme="light"] .how-step-icon svg { stroke: rgb(80,110,0) !important; }
+
+    /* Popular badge */
+    [data-theme="light"] .absolute.-top-4 > div {
+      background: rgb(80,110,0) !important;
+      color: #ffffff !important;
+    }
+
+    /* Review avatars */
+    [data-theme="light"] .review-avatar { opacity: 0.9; }
+
+    /* Nav active link */
+    [data-theme="light"] nav a[style*="rgb(218,255,1)"] { color: rgb(70,100,0) !important; }
+
+    /* Burger menu icon */
+    [data-theme="light"] button.md\:hidden svg { stroke: #0d0d0f !important; }
+
+  
+    /* CSS змінні для акордеону — перекриваються темою */
+    :root {
+      --acc-heading-color: rgb(218,255,1);
+      --acc-text-color: rgb(218,218,218);
+    }
+    [data-theme="light"] {
+      --acc-heading-color: rgb(70,100,0);
+      --acc-text-color: #2a2a3a;
+    }
+
+  </style>
   <meta name="theme-color" content="#111113">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="StakeBot — професійний мульти-додаток для автоматизації заробітку на STAKE RP. Рибалка, качалка, кар'єр, лісоруб.">
@@ -4548,7 +4903,11 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" x2="12" y1="15" y2="3"></line>
-                </svg>Завантажити</button></div><button class="md:hidden text-white p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                </svg>Завантажити</button><button id="theme-toggle" aria-label="Перемкнути тему" style="width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:white;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;margin-left:8px;flex-shrink:0;">
+                <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              </button>
+              </div><button class="md:hidden text-white p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
                 <path d="M4 12h16"></path>
@@ -6268,13 +6627,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!botName) return;
     var steps = accordionContent[botName];
     var heading = document.createElement('p');
-    heading.style.cssText = 'font-weight:600;color:rgb(218,255,1);margin-bottom:8px;';
+    heading.style.cssText = 'font-weight:600;color:var(--acc-heading-color, rgb(218,255,1));margin-bottom:8px;';
     heading.textContent = 'Покрокова інструкція:';
     var ul = document.createElement('ul');
     ul.style.cssText = 'list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;';
     steps.forEach(function(step) {
       var li = document.createElement('li');
-      li.style.cssText = 'color:rgb(218,218,218);font-size:14px;line-height:1.5;padding:4px 0;';
+      li.style.cssText = 'color:var(--acc-text-color, rgb(218,218,218));font-size:14px;line-height:1.5;padding:4px 0;';
       li.innerHTML = step;
       ul.appendChild(li);
     });
@@ -6404,6 +6763,42 @@ function toggleHowIsland() {
   island.classList.toggle('open');
   btn.classList.toggle('open');
 }
+
+/* ============================================================
+   ТЕМА — світла/темна з localStorage
+============================================================ */
+(function() {
+  // Apply data-theme ASAP (before render) to avoid flash
+  var saved = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+})();
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  var iconDark  = document.getElementById('theme-icon-dark');
+  var iconLight = document.getElementById('theme-icon-light');
+  var btn = document.getElementById('theme-toggle');
+  if (theme === 'light') {
+    if (iconDark)  iconDark.style.display  = 'none';
+    if (iconLight) iconLight.style.display = '';
+    if (btn) { btn.style.borderColor = 'rgba(0,0,0,0.15)'; btn.style.background = 'rgba(0,0,0,0.06)'; btn.style.color = '#0d0d0f'; }
+  } else {
+    if (iconDark)  iconDark.style.display  = '';
+    if (iconLight) iconLight.style.display = 'none';
+    if (btn) { btn.style.borderColor = 'rgba(255,255,255,0.15)'; btn.style.background = 'rgba(255,255,255,0.06)'; btn.style.color = 'white'; }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme') || 'dark';
+    var next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+});
 </script>
 </body>
 
