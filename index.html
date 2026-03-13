@@ -4517,221 +4517,169 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     main { -webkit-overflow-scrolling: touch; }
 
     /* ============================================================
-       СВІТЛА ТЕМА — [data-theme="light"]
+       СВІТЛА ТЕМА — м'яка, без яскравості
     ============================================================ */
-
-    /* --- Загальні кольори --- */
     [data-theme="light"] {
-      --bg-primary:   #f0f2f5;
-      --bg-secondary: #ffffff;
-      --bg-card:      #ffffff;
-      --text-primary: #0d0d0f;
-      --text-secondary: #4a4a5a;
-      --text-muted:   #7a7a8a;
-      --border:       rgba(0,0,0,0.09);
-      --accent:       rgb(100,130,0);
-      --accent-bg:    rgba(100,130,0,0.08);
+      --acc-heading-color: rgb(60,90,0);
+      --acc-text-color: #2a2a3a;
     }
-
-    /* --- HTML / Body --- */
     [data-theme="light"] html,
-    [data-theme="light"] body,
-    [data-theme="light"] .App {
-      background-color: #f0f2f5 !important;
-      color: #0d0d0f !important;
-    }
+    [data-theme="light"] body { background-color: #e8eaed !important; }
+    [data-theme="light"] .App { background-color: #e8eaed !important; color: #1a1a2e !important; }
 
-    /* --- Всі секції --- */
-    [data-theme="light"] section {
-      background-color: #f0f2f5 !important;
-    }
-    [data-theme="light"] section:nth-child(even),
+    /* Секції */
+    [data-theme="light"] section { background-color: #e8eaed !important; }
     [data-theme="light"] #features,
-    [data-theme="light"] #instructions {
-      background-color: #ffffff !important;
-    }
+    [data-theme="light"] #instructions,
+    [data-theme="light"] #bots       { background-color: #f2f4f7 !important; }
 
-    /* --- Header --- */
+    /* Header */
     [data-theme="light"] header {
-      background-color: rgba(240,242,245,0.95) !important;
-      border-bottom-color: rgba(0,0,0,0.1) !important;
+      background-color: rgba(232,234,237,0.97) !important;
+      border-bottom-color: rgba(0,0,0,0.08) !important;
     }
     [data-theme="light"] header a,
-    [data-theme="light"] nav a {
-      color: #1a1a2e !important;
-    }
-    [data-theme="light"] nav a:hover { color: rgb(100,130,0) !important; }
+    [data-theme="light"] nav a { color: #1a1a2e !important; }
+    [data-theme="light"] nav a:hover { color: rgb(60,90,0) !important; }
 
-    /* --- Footer --- */
+    /* Footer */
     [data-theme="light"] footer {
-      background-color: #ffffff !important;
-      border-top-color: rgba(0,0,0,0.1) !important;
+      background-color: #f2f4f7 !important;
+      border-top-color: rgba(0,0,0,0.08) !important;
     }
+    [data-theme="light"] footer a { color: #4a4a5a !important; }
+    [data-theme="light"] footer a:hover { color: rgb(60,90,0) !important; }
+    [data-theme="light"] footer p,
+    [data-theme="light"] footer span { color: #5a5a6a !important; }
+    [data-theme="light"] footer h3,
+    [data-theme="light"] footer h4 { color: #1a1a2e !important; }
 
-    /* --- Текст --- */
+    /* Текст */
     [data-theme="light"] h1,[data-theme="light"] h2,
-    [data-theme="light"] h3,[data-theme="light"] h4,
-    [data-theme="light"] h5,[data-theme="light"] h6 { color: #0d0d0f !important; }
-    [data-theme="light"] p  { color: #3a3a4a !important; }
-    [data-theme="light"] span:not(.save-pill):not([class*="text-[rgb(218,255,1)"]) { color: inherit; }
-    [data-theme="light"] .text-white { color: #0d0d0f !important; }
+    [data-theme="light"] h3,[data-theme="light"] h4 { color: #0d0d1a !important; }
+    [data-theme="light"] p { color: #3a3a4a !important; }
+    [data-theme="light"] .text-white { color: #0d0d1a !important; }
     [data-theme="light"] .text-\[rgb\(218\,218\,218\)\] { color: #3a3a4a !important; }
     [data-theme="light"] .text-\[rgb\(161\,161\,170\)\] { color: #5a5a6a !important; }
     [data-theme="light"] .text-\[rgb\(100\,100\,110\)\] { color: #6a6a7a !important; }
     [data-theme="light"] .text-\[rgb\(90\,90\,100\)\]   { color: #7a7a8a !important; }
 
-    /* --- Акцентний жовто-зелений → темно-оливковий --- */
-    [data-theme="light"] .text-\[rgb\(218\,255\,1\)\] { color: rgb(90,115,0) !important; }
-    [data-theme="light"] .bg-\[rgb\(218\,255\,1\)\]  { background-color: rgb(90,115,0) !important; color: #fff !important; }
-    [data-theme="light"] .bg-\[rgb\(218\,255\,1\)\]:hover { background-color: rgb(70,95,0) !important; }
+    /* Акцент: жовто-зелений → темно-оливковий */
+    [data-theme="light"] .text-\[rgb\(218\,255\,1\)\] { color: rgb(55,85,0) !important; }
+    [data-theme="light"] .bg-\[rgb\(218\,255\,1\)\]  { background-color: rgb(55,85,0) !important; color: #fff !important; }
+    [data-theme="light"] .bg-\[rgb\(218\,255\,1\)\]:hover { background-color: rgb(40,65,0) !important; }
     [data-theme="light"] .text-\[rgb\(17\,17\,19\)\] { color: #fff !important; }
-    [data-theme="light"] .hover\:bg-\[rgb\(166\,190\,21\)\]:hover { background-color: rgb(70,95,0) !important; }
-    [data-theme="light"] .save-pill { background: rgb(90,115,0) !important; color: #fff !important; }
-    [data-theme="light"] .how-step-num { background: rgb(90,115,0) !important; color: #fff !important; }
+    [data-theme="light"] .hover\:bg-\[rgb\(166\,190\,21\)\]:hover { background-color: rgb(40,65,0) !important; }
+    [data-theme="light"] .save-pill { background: rgb(55,85,0) !important; color: #fff !important; }
+    [data-theme="light"] .how-step-num { background: rgb(55,85,0) !important; color: #fff !important; }
+    [data-theme="light"] span[style*="rgb(218,255,1)"],
+    [data-theme="light"] span[style*="218,255,1"] { color: rgb(55,85,0) !important; }
 
-    /* --- Карточки / блоки --- */
+    /* Картки */
     [data-theme="light"] .bg-\[rgb\(26\,28\,30\)\] { background-color: #ffffff !important; }
-    [data-theme="light"] .bg-\[rgb\(17\,17\,19\)\] { background-color: #f0f2f5 !important; }
-    [data-theme="light"] .bg-\[rgba\(26\,28\,30\,0\.85\)\] { background-color: rgba(255,255,255,0.95) !important; }
+    [data-theme="light"] .bg-\[rgb\(17\,17\,19\)\] { background-color: #e8eaed !important; }
+    [data-theme="light"] .bg-\[rgba\(26\,28\,30\,0\.85\)\] { background-color: rgba(255,255,255,0.97) !important; }
     [data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.1\)\] { border-color: rgba(0,0,0,0.1) !important; }
     [data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.07\)\] { border-color: rgba(0,0,0,0.07) !important; }
-    [data-theme="light"] .border-\[rgba\(63\,63\,63\)\] { border-color: rgba(0,0,0,0.2) !important; }
+    [data-theme="light"] .border-\[rgba\(63\,63\,63\)\] { border-color: rgba(0,0,0,0.18) !important; }
+    [data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.15\)\] { border-color: rgba(0,0,0,0.12) !important; }
 
-    /* --- Review cards --- */
-    [data-theme="light"] .review-card {
-      background: #ffffff !important;
-      border-color: rgba(0,0,0,0.08) !important;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
-    [data-theme="light"] .review-card:hover { border-color: rgba(90,115,0,0.4) !important; }
-    [data-theme="light"] .review-name { color: #0d0d0f !important; }
-    [data-theme="light"] .review-text { color: #3a3a4a !important; }
-    [data-theme="light"] .review-stars { color: rgb(90,115,0) !important; }
+    /* Всі inline style color overrides */
+    [data-theme="light"] [style*="color:rgb(218,218,218)"],
+    [data-theme="light"] [style*="color: rgb(218, 218, 218)"] { color: #2a2a3a !important; }
+    [data-theme="light"] [style*="color:rgb(200,200,210)"] { color: #3a3a4a !important; }
+    [data-theme="light"] [style*="color:rgb(160,160,170)"] { color: #5a5a6a !important; }
+    [data-theme="light"] [style*="color:white"] { color: #0d0d1a !important; }
+    [data-theme="light"] [style*="background:rgb(26,28,30)"],
+    [data-theme="light"] [style*="background: rgb(26,28,30)"] { background: #ffffff !important; }
+
+    /* Акордеон */
+    [data-theme="light"] [id^="radix-_r_"] * { color: #2a2a3a !important; }
+    [data-theme="light"] [id^="radix-_r_"] p:first-child { color: rgb(55,85,0) !important; }
+    [data-theme="light"] .space-y-4 > div { background: #ffffff !important; border-color: rgba(0,0,0,0.09) !important; }
+    [data-theme="light"] button[aria-expanded] { background: #ffffff !important; color: #0d0d1a !important; }
+
+    /* Reviews */
+    [data-theme="light"] .review-card { background: #ffffff !important; border-color: rgba(0,0,0,0.08) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    [data-theme="light"] .review-card:hover { border-color: rgba(55,85,0,0.35) !important; }
+    [data-theme="light"] .review-name  { color: #0d0d1a !important; }
+    [data-theme="light"] .review-text  { color: #3a3a4a !important; }
+    [data-theme="light"] .review-stars { color: rgb(55,85,0) !important; }
     [data-theme="light"] .review-date  { color: #8a8a9a !important; }
 
-    /* --- Pricing cards --- */
-    [data-theme="light"] .plan-face {
-      background: #ffffff !important;
-      border-color: rgba(0,0,0,0.1) !important;
-    }
-    [data-theme="light"] #cyl-pro .plan-face {
-      border-color: rgb(90,115,0) !important;
-      box-shadow: 0 10px 30px rgba(90,115,0,0.15) !important;
-    }
+    /* Pricing */
+    [data-theme="light"] .plan-face { background: #ffffff !important; border-color: rgba(0,0,0,0.1) !important; }
+    [data-theme="light"] #cyl-pro .plan-face { border-color: rgb(55,85,0) !important; box-shadow: 0 8px 24px rgba(55,85,0,0.12) !important; }
+    [data-theme="light"] .period-toggle-btn { border-color: rgba(55,85,0,0.3) !important; background: rgba(55,85,0,0.05) !important; color: #3a3a4a !important; }
+    [data-theme="light"] .period-toggle-btn:hover { background: rgba(55,85,0,0.1) !important; color: rgb(55,85,0) !important; }
+    [data-theme="light"] .period-toggle-btn.back-btn { border-color: rgba(0,0,0,0.12) !important; color: #7a7a8a !important; }
 
-    /* --- Accordion --- */
-    [data-theme="light"] .space-y-4 > div {
-      background: #ffffff !important;
-      border-color: rgba(0,0,0,0.1) !important;
-    }
-    [data-theme="light"] button[aria-expanded] {
-      background: #ffffff !important;
-      color: #0d0d0f !important;
-    }
+    /* FAQ CTA */
+    [data-theme="light"] .faq-cta-wrap { background: linear-gradient(135deg,rgba(55,85,0,0.06)0%,rgba(55,85,0,0.02)100%) !important; border-color: rgba(55,85,0,0.15) !important; }
+    [data-theme="light"] .faq-link-btn { background: rgba(0,0,0,0.04) !important; border-color: rgba(0,0,0,0.09) !important; color: #2a2a3a !important; }
+    [data-theme="light"] .faq-link-btn:hover { background: rgba(55,85,0,0.07) !important; border-color: rgba(55,85,0,0.25) !important; color: rgb(55,85,0) !important; }
 
-    /* --- FAQ CTA --- */
-    [data-theme="light"] .faq-cta-wrap {
-      background: linear-gradient(135deg, rgba(90,115,0,0.07) 0%, rgba(90,115,0,0.02) 100%) !important;
-      border-color: rgba(90,115,0,0.2) !important;
-    }
-    [data-theme="light"] .faq-link-btn {
-      background: rgba(0,0,0,0.04) !important;
-      border-color: rgba(0,0,0,0.1) !important;
-      color: #2a2a3a !important;
-    }
-    [data-theme="light"] .faq-link-btn:hover {
-      background: rgba(90,115,0,0.08) !important;
-      border-color: rgba(90,115,0,0.3) !important;
-      color: rgb(90,115,0) !important;
-    }
+    /* How-island */
+    [data-theme="light"] #how-island > div { background: rgba(255,255,255,0.98) !important; border-color: rgba(55,85,0,0.18) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.08) !important; }
+    [data-theme="light"] .how-step-icon { background: rgba(55,85,0,0.07) !important; border-color: rgba(55,85,0,0.18) !important; background-color: #f2f4f7 !important; }
+    [data-theme="light"] .how-step-icon svg { stroke: rgb(55,85,0) !important; }
+    [data-theme="light"] #how-it-works-btn { border-color: rgba(0,0,0,0.12) !important; background: rgba(0,0,0,0.04) !important; color: #3a3a4a !important; }
+    [data-theme="light"] #how-it-works-btn:hover { background: rgba(55,85,0,0.07) !important; border-color: rgba(55,85,0,0.3) !important; color: rgb(55,85,0) !important; }
 
-    /* --- How-island --- */
-    [data-theme="light"] #how-island > div {
-      background: rgba(255,255,255,0.97) !important;
-      border-color: rgba(90,115,0,0.2) !important;
-    }
-    [data-theme="light"] .how-step-icon {
-      background: rgba(90,115,0,0.07) !important;
-      border-color: rgba(90,115,0,0.2) !important;
-    }
+    /* Popular badge */
+    [data-theme="light"] .absolute.-top-4 > div { background: rgb(55,85,0) !important; color: #ffffff !important; }
 
-    /* --- How-it-works button --- */
-    [data-theme="light"] #how-it-works-btn {
-      border-color: rgba(0,0,0,0.15) !important;
-      background: rgba(0,0,0,0.04) !important;
-      color: #3a3a4a !important;
-    }
-    [data-theme="light"] #how-it-works-btn:hover {
-      background: rgba(90,115,0,0.08) !important;
-      border-color: rgba(90,115,0,0.35) !important;
-      color: rgb(90,115,0) !important;
-    }
+    /* Buttons */
+    [data-theme="light"] button[class*="border-2"] { color: #0d0d1a !important; border-color: rgba(0,0,0,0.22) !important; }
+    [data-theme="light"] button[class*="border-2"]:hover { border-color: rgb(55,85,0) !important; color: rgb(55,85,0) !important; }
 
-    /* --- Кнопка "Купити" outline --- */
-    [data-theme="light"] button.bg-transparent {
-      color: #0d0d0f !important;
-      border-color: rgba(0,0,0,0.2) !important;
-    }
+    /* Scroll-top */
+    [data-theme="light"] #scroll-top-btn { background: rgb(55,85,0) !important; color: #fff !important; box-shadow: 0 4px 14px rgba(55,85,0,0.3) !important; }
 
-    /* --- Period toggle --- */
-    [data-theme="light"] .period-toggle-btn {
-      border-color: rgba(90,115,0,0.35) !important;
-      background: rgba(90,115,0,0.05) !important;
-      color: #3a3a4a !important;
-    }
-    [data-theme="light"] .period-toggle-btn:hover {
-      background: rgba(90,115,0,0.12) !important;
-      color: rgb(90,115,0) !important;
-    }
-    [data-theme="light"] .period-toggle-btn.back-btn {
-      border-color: rgba(0,0,0,0.12) !important;
-      color: #7a7a8a !important;
-    }
+    /* Theme toggle */
+    [data-theme="light"] #theme-toggle { border-color: rgba(0,0,0,0.12) !important; background: rgba(0,0,0,0.05) !important; color: #0d0d1a !important; }
 
-    /* --- Scroll-top btn --- */
-    [data-theme="light"] #scroll-top-btn {
-      background: rgb(90,115,0) !important;
-      color: #fff !important;
-      box-shadow: 0 4px 16px rgba(90,115,0,0.35) !important;
-    }
-
-    /* --- Theme toggle button --- */
-    [data-theme="light"] #theme-toggle {
-      border-color: rgba(0,0,0,0.15) !important;
-      background: rgba(0,0,0,0.06) !important;
-      color: #0d0d0f !important;
-    }
-
-    /* --- Фонова сітка — темніша на білому --- */
+    /* Сітка — на світлому */
     [data-theme="light"] body::after {
-      background-image:
-        linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px) !important;
+      background-image: linear-gradient(rgba(0,0,0,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(0,0,0,0.05) 1px,transparent 1px) !important;
     }
 
-    /* --- Градієнт прапора — адаптований --- */
+    /* Градієнт прапора — приглушений */
     [data-theme="light"] section,
     [data-theme="light"] footer {
-      background-image:
-        radial-gradient(ellipse 90% 60% at 10% 20%, rgba(0,91,187,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 70% 50% at 90% 80%, rgba(180,140,0,0.07) 0%, transparent 55%) !important;
+      background-image: radial-gradient(ellipse 90% 60% at 10% 20%,rgba(0,91,187,0.05)0%,transparent 60%), radial-gradient(ellipse 70% 50% at 90% 80%,rgba(160,120,0,0.05)0%,transparent 55%) !important;
     }
 
-    /* --- Burger menu кнопка --- */
-    [data-theme="light"] .md\:hidden { color: #0d0d0f !important; }
+    /* Footer соц-іконки */
+    [data-theme="light"] footer a[class*="rounded-full"] { background: rgba(0,0,0,0.06) !important; border-color: rgba(0,0,0,0.12) !important; color: #2a2a3a !important; }
+    [data-theme="light"] footer a[class*="rounded-full"]:hover { background: rgba(55,85,0,0.1) !important; border-color: rgba(55,85,0,0.3) !important; color: rgb(55,85,0) !important; }
+    [data-theme="light"] footer svg { color: currentColor !important; }
 
-    /* --- Borders на alert boxes --- */
-    [data-theme="light"] .border-\[rgba\(239\,68\,68\,0\.5\)\] { border-color: rgba(200,50,50,0.5) !important; }
+    /* Червоні елементи */
+    [data-theme="light"] .text-\[rgb\(239\,68\,68\)\] { color: rgb(170,30,30) !important; }
+    [data-theme="light"] .bg-\[rgba\(239\,68\,68\,0\.2\)\] { background: rgba(160,30,30,0.1) !important; }
 
-    /* --- Placeholder icons bg --- */
-    [data-theme="light"] .bg-\[rgba\(218\,255\,1\,0\.1\)\]  { background-color: rgba(90,115,0,0.08) !important; }
-    [data-theme="light"] .bg-\[rgba\(218\,255\,1\,0\.07\)\] { background-color: rgba(90,115,0,0.07) !important; }
+    /* Burger */
+    [data-theme="light"] button.md\:hidden svg { stroke: #0d0d1a !important; }
+    [data-theme="light"] button.md\:hidden { color: #0d0d1a !important; }
 
-    /* --- SVG stroke inherit --- */
-    [data-theme="light"] svg[stroke="rgb(218,255,1)"] { stroke: rgb(90,115,0) !important; }
+    /* Іконки категорій (bg-[rgba(218,255,1,0.1)]) */
+    [data-theme="light"] .bg-\[rgba\(218\,255\,1\,0\.1\)\] { background-color: rgba(55,85,0,0.08) !important; }
+    [data-theme="light"] .bg-\[rgba\(218\,255\,1\,0\.07\)\] { background-color: rgba(55,85,0,0.06) !important; }
+    [data-theme="light"] .text-\[rgb\(218\,255\,1\)\] svg { stroke: rgb(55,85,0) !important; }
 
-  
-    /* Плавний перехід між темами */
+    /* Гарячі клавіші badge */
+    [data-theme="light"] .font-bold.text-\[rgb\(218\,255\,1\)\] { color: rgb(55,85,0) !important; }
+
+    /* Nav active */
+    [data-theme="light"] nav a[style*="218,255,1"] { color: rgb(55,85,0) !important; }
+
+    /* Terms section */
+    [data-theme="light"] #terms-section { background-color: #e8eaed !important; }
+    [data-theme="light"] #terms-section h2 { color: #0d0d1a !important; }
+    [data-theme="light"] #terms-section .card { background: #ffffff !important; border-color: rgba(0,0,0,0.09) !important; }
+
+/* Плавний перехід між темами */
     html { transition: background-color 0.3s ease; }
     section, footer, header { transition: background-color 0.3s ease !important; }
 
@@ -4870,6 +4818,44 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       --acc-text-color: #2a2a3a;
     }
 
+  
+    /* Висота карток тарифів — тільки PRO розтягується, free/basic — природня */
+    .plan-cylinder-wrap { display: flex; flex-direction: column; }
+    .plan-cylinder { display: flex; flex-direction: column; }
+    .plan-face { display: flex; flex-direction: column; }
+
+  
+    /* Світла тема — "Як це працює?" острівець */
+    [data-theme="light"] #how-island > div {
+      background: #ffffff !important;
+      border: 1px solid rgba(55,85,0,0.15) !important;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
+    }
+    /* Конектор-лінії між кроками */
+    [data-theme="light"] .how-connector {
+      background: linear-gradient(90deg, rgba(55,85,0,0.4), rgba(55,85,0,0.12)) !important;
+    }
+    /* Іконки кроків */
+    [data-theme="light"] .how-step-icon {
+      background: #f2f4f7 !important;
+      border-color: rgba(55,85,0,0.2) !important;
+    }
+    [data-theme="light"] .how-step-icon svg {
+      stroke: rgb(55,85,0) !important;
+    }
+    /* Номери кроків */
+    [data-theme="light"] .how-step-num {
+      background: rgb(55,85,0) !important;
+      color: #ffffff !important;
+    }
+    /* Текст кроків */
+    [data-theme="light"] #how-island h4 { color: #0d0d1a !important; }
+    [data-theme="light"] #how-island p  { color: #4a4a5a !important; }
+    [data-theme="light"] #how-island .text-\[rgb\(218\,218\,218\)\] { color: #3a3a4a !important; }
+    [data-theme="light"] #how-island .text-\[rgb\(161\,161\,170\)\] { color: #5a5a6a !important; }
+    /* Підзаголовок острівця */
+    [data-theme="light"] #how-island .text-\[rgb\(218\,255\,1\)\] { color: rgb(55,85,0) !important; }
+
   </style>
   <meta name="theme-color" content="#111113">
   <meta name="color-scheme" content="dark">
@@ -4931,7 +4917,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               <div
                 class="inline-flex items-center gap-2 px-4 py-2 bg-[rgb(26,28,30)] border border-[rgba(218,255,1,0.3)] rounded-full mb-8 animate-fade-in" style="max-width:calc(100vw - 48px);box-sizing:border-box;">
                 <div class="w-2 h-2 bg-[rgb(218,255,1)] rounded-full animate-pulse"></div><span
-                  style="font-size:clamp(10px,3vw,14px);white-space:nowrap;" class="font-medium text-[rgb(218,255,1)]">Офіційний бот для STAKE RP</span>
+                  style="font-size:clamp(9px,2.5vw,14px);white-space:normal;text-align:center;" class="font-medium text-[rgb(218,255,1)]">Офіційний бот для STAKE RP</span>
               </div>
               <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in"><span
                   class="text-white">Автоматизація</span><br><span class="text-[rgb(218,255,1)]">GTA 5 RP</span><span class="text-white"> заробітку</span></h1>
@@ -4965,10 +4951,10 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                   <div class="mt-6 bg-[rgba(26,28,30,0.95)] backdrop-blur-md border border-[rgba(218,255,1,0.15)] rounded-2xl p-6 md:p-8 w-full shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
                     <p class="text-center text-[rgb(161,161,170)] text-sm mb-8">Від завантаження до першого заробітку — менше ніж за 10 хвилин</p>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative">
-                      <!-- Connector lines -->
-                      <div class="how-connector" style="left:calc(25% + 18px);width:calc(25% - 36px);"></div>
-                      <div class="how-connector" style="left:calc(50% + 18px);width:calc(25% - 36px);"></div>
-                      <div class="how-connector" style="left:calc(75% + 18px);width:calc(25% - 36px);"></div>
+                      <!-- Connector lines — all 3 gaps between 4 steps -->
+                      <div class="how-connector" style="left:calc(12.5% + 30px);width:calc(25% - 36px);"></div>
+                      <div class="how-connector" style="left:calc(37.5% + 30px);width:calc(25% - 36px);"></div>
+                      <div class="how-connector" style="left:calc(62.5% + 30px);width:calc(25% - 36px);"></div>
 
                       <div class="how-step-wrap text-center">
                         <div class="how-step-icon">
@@ -5597,7 +5583,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <div
-                class="relative bg-[rgb(26,28,30)] border rounded-2xl p-8 transition-all duration-300 border-[rgba(255,255,255,0.1)] hover:border-[rgb(218,255,1)] hover:-translate-y-1" style="animation-delay: 0ms;">
+                class="relative bg-[rgb(26,28,30)] border rounded-2xl p-8 transition-all duration-300 border-[rgba(255,255,255,0.1)] hover:border-[rgb(218,255,1)] hover:-translate-y-1" style="align-self:start;" style="animation-delay: 0ms;">
                 <div class="text-center mb-8">
                   <h3 class="text-2xl font-bold text-white mb-2">Безкоштовна</h3>
                   <p class="text-sm text-[rgb(161,161,170)] mb-6">Базовий функціонал для
@@ -5606,6 +5592,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                       class="text-5xl font-bold text-[rgb(218,255,1)]">0</span><span class="text-2xl text-[rgb(218,218,218)] pb-2">₴</span></div>
                   <p class="text-sm text-[rgb(161,161,170)]">/<span
                       data-ve-dynamic="true" style="display: contents;">24 години</span></p>
+                
                 </div>
                 <div class="space-y-4 mb-8">
                   <div class="flex items-start gap-3">
@@ -5626,6 +5613,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                         <path d="M20 6 9 17l-5-5"></path>
                       </svg></div><span class="text-[rgb(218,218,218)] text-sm leading-relaxed">Базові налаштування</span>
                   </div>
+
                   <div class="flex items-start gap-3">
                     <div
                       class="w-5 h-5 bg-[rgba(218,255,1,0.1)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -5635,6 +5623,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                         <path d="M20 6 9 17l-5-5"></path>
                       </svg></div><span class="text-[rgb(218,218,218)] text-sm leading-relaxed">Звукові ефекти</span>
                   </div>
+
                   <div class="flex items-start gap-3">
                     <div
                       class="w-5 h-5 bg-[rgba(218,255,1,0.1)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -5716,7 +5705,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                     <div class="text-center mb-8">
                       <h3 class="text-2xl font-bold text-white mb-2">Базова</h3>
                       <p class="text-sm text-[rgb(161,161,170)] mb-6">Доступ до базових налаштувань</p>
-                      <div class="flex items-end justify-center gap-2 mb-2">
+                      <div class="flex items-end justify-center gap-2 mb-1">
                         <span class="text-5xl font-bold text-[rgb(218,255,1)]">220</span>
                         <span class="text-2xl text-[rgb(218,218,218)] pb-2">₴</span>
                       </div>
@@ -5734,7 +5723,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                     <div class="text-center mb-8">
                       <h3 class="text-2xl font-bold text-white mb-2">Базова</h3>
                       <p class="text-sm text-[rgb(161,161,170)] mb-6">Доступ до базових налаштувань</p>
-                      <div class="flex items-end justify-center gap-2 mb-2">
+                      <div class="flex items-end justify-center gap-2 mb-1">
                         <span class="text-5xl font-bold text-[rgb(218,255,1)]">176</span>
                         <span class="text-2xl text-[rgb(218,218,218)] pb-2">₴</span>
                       </div>
@@ -6108,24 +6097,18 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               <p class="text-lg text-[rgb(218,218,218)]">Детальні вказівки для кожного бота та
                 загальні налаштування</p>
             </div>
-            <div
-              class="max-w-4xl mx-auto mb-12 bg-gradient-to-r from-[rgba(239,68,68,0.1)] to-[rgba(239,68,68,0.05)] border border-[rgba(239,68,68,0.5)] rounded-2xl p-6">
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-10 h-10 bg-[rgba(239,68,68,0.2)] rounded-lg flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-triangle-alert w-6 h-6 text-[rgb(239,68,68)]" aria-hidden="true">
-                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
-                    <path d="M12 9v4"></path>
-                    <path d="M12 17h.01"></path>
-                  </svg></div>
-                <div>
-                  <h3 class="text-lg font-bold text-[rgb(239,68,68)] mb-2">ВІДМОВА ВІД
-                    ВІДПОВІДАЛЬНОСТІ</h3>
-                  <p class="text-[rgb(218,218,218)] text-sm leading-relaxed">Ця
-                    програма надається "ЯК Є" (AS IS). Автор не несе відповідальності за будь-які збитки або блокування
-                    акаунтів. Використовуйте на власний ризик.</p>
+            <!-- Відмова від відповідальності — покращена -->
+            <div class="max-w-4xl mx-auto mb-12">
+              <div style="border:1px solid rgba(239,68,68,0.3);border-radius:16px;overflow:hidden;">
+                <div style="background:linear-gradient(135deg,rgba(239,68,68,0.08)0%,rgba(239,68,68,0.03)100%);padding:20px 24px;display:flex;align-items:flex-start;gap:16px;">
+                  <div style="width:40px;height:40px;background:rgba(239,68,68,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(239,68,68)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-weight:700;color:rgb(239,100,100);font-size:14px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:6px;">Відмова від відповідальності</p>
+                    <p style="color:rgb(200,200,210);font-size:13px;line-height:1.6;">Ця програма надається <strong style="color:white;">"ЯК Є"</strong> (AS IS). Автор не несе відповідальності за будь-які збитки або блокування акаунтів. Використовуйте на власний ризик.</p>
+                    <p style="color:rgb(160,160,170);font-size:12px;margin-top:6px;font-style:italic;">Рекомендуємо використовувати емуляцію людини та анті-AFK функції для природної поведінки персонажа.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -6259,7 +6242,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
           
 
             <!-- FAQ CTA -->
-            <div class="max-w-3xl mx-auto mt-12">
+            <div id="faq-section" class="max-w-3xl mx-auto mt-12">
               <div class="faq-cta-wrap">
                 <div class="inline-flex items-center gap-2 bg-[rgba(218,255,1,0.1)] border border-[rgba(218,255,1,0.25)] text-[rgb(218,255,1)] text-xs font-semibold px-3 py-1 rounded-full mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -6288,102 +6271,31 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
           <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(218,255,1,0.03)] to-transparent"></div>
           <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-4xl mx-auto">
-              <div
-                class="bg-gradient-to-br from-[rgba(218,255,1,0.1)] to-[rgba(0,174,239,0.05)] border-2 border-[rgb(218,255,1)] rounded-3xl p-12 text-center shadow-[0_20px_60px_rgba(218,255,1,0.2)]">
-                <div class="w-20 h-20 bg-[rgb(218,255,1)] rounded-2xl flex items-center justify-center mx-auto mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-download w-10 h-10 text-[rgb(17,17,19)]" aria-hidden="true">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" x2="12" y1="15" y2="3"></line>
-                  </svg></div>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                  Завантажити <span class="text-[rgb(218,255,1)]">StakeBot</span>
-                </h2>
-                <p class="text-lg text-[rgb(218,218,218)] mb-8 max-w-2xl mx-auto">
-                  Почніть заробляти вже сьогодні! Завантажте додаток та отримайте безкоштовний доступ</p>
-                <div
-                  class="inline-flex items-center gap-2 px-4 py-2 bg-[rgb(26,28,30)] border border-[rgba(255,255,255,0.1)] rounded-full mb-8">
-                  <div class="w-2 h-2 bg-[rgb(34,197,94)] rounded-full"></div><span
-                    class="text-sm text-[rgb(218,218,218)]">Версія v4.12 -
-                    Professional • Windows 10/11</span>
-                </div>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow py-2 bg-[rgb(218,255,1)] text-[rgb(17,17,19)] hover:bg-[rgb(166,190,21)] font-bold px-10 h-14 text-lg rounded-xl transition-all duration-200 hover:shadow-[0_8px_25px_rgba(218,255,1,0.4)] hover:-translate-y-1 min-w-[240px]" data-action="download"><svg
-                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="lucide lucide-download w-5 h-5 mr-2" aria-hidden="true">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <polyline points="7 10 12 15 17 10"></polyline>
-                      <line x1="12" x2="12" y1="15" y2="3"></line>
-                    </svg>Завантажити (Windows)</button><button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-sm hover:text-accent-foreground py-2 bg-transparent text-white border-2 border-[rgb(218,255,1)] hover:bg-[rgba(218,255,1,0.1)] font-semibold px-10 h-14 text-lg rounded-xl transition-all duration-200 hover:-translate-y-1 min-w-[240px]" data-action="buy"><svg
-                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="lucide lucide-shopping-cart w-5 h-5 mr-2" aria-hidden="true">
-                      <circle cx="8" cy="21" r="1"></circle>
-                      <circle cx="19" cy="21" r="1"></circle>
-                      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                    </svg>Купити ключ</button></div>
-                <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-[rgb(161,161,170)]">
-                  <div class="flex items-center gap-2"><span
-                      class="w-2 h-2 bg-[rgb(161,161,170)] rounded-full"></span><span>Розмір: ~100 MB</span></div>
-                  <div class="flex items-center gap-2"><span
-                      class="w-2 h-2 bg-[rgb(161,161,170)] rounded-full"></span><span>Формат: .exe</span></div>
-                  <div class="flex items-center gap-2"><span
-                      class="w-2 h-2 bg-[rgb(161,161,170)] rounded-full"></span><span>Оновлено: 06.03.2026</span>
-                  </div>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-3 gap-6 mt-12">
-                <div class="bg-[rgb(26,28,30)] border border-[rgba(255,255,255,0.1)] rounded-2xl p-6 text-center">
-                  <div class="text-3xl mb-3">📦</div>
-                  <h3 class="text-lg font-semibold text-white mb-2">Встановлення</h3>
-                  <p class="text-sm text-[rgb(161,161,170)]">Розпакуйте архів та
-                    запустіть .exe</p>
-                </div>
-                <div class="bg-[rgb(26,28,30)] border border-[rgba(255,255,255,0.1)] rounded-2xl p-6 text-center">
-                  <div class="text-3xl mb-3">🔑</div>
-                  <h3 class="text-lg font-semibold text-white mb-2">Активація</h3>
-                  <p class="text-sm text-[rgb(161,161,170)]">Введіть ключ у розділі
-                    "Підписка та HWID"</p>
-                </div>
-                <div class="bg-[rgb(26,28,30)] border border-[rgba(255,255,255,0.1)] rounded-2xl p-6 text-center">
-                  <div class="text-3xl mb-3">💬</div>
-                  <h3 class="text-lg font-semibold text-white mb-2">Підтримка</h3>
-                  <p class="text-sm text-[rgb(161,161,170)]">Discord та Telegram
-                    24/7</p>
-                </div>
-              </div>
-              <div class="mt-12 bg-[rgb(26,28,30)] border border-[rgba(255,255,255,0.1)] rounded-2xl p-8">
-                <h3 class="text-xl font-bold text-white mb-6 text-center">
-                  Системні вимоги</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 class="text-[rgb(218,255,1)] font-semibold mb-3">Мінімальні</h4>
-                    <ul class="space-y-2 text-[rgb(218,218,218)] text-sm">
-                      <li>• Windows 10 (64-bit)</li>
-                      <li>• 4 GB RAM</li>
-                      <li>• 100 MB вільного місця</li>
-                      <li>• GTA 5 встановлена</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 class="text-[rgb(218,255,1)] font-semibold mb-3">Рекомендовані</h4>
-                    <ul class="space-y-2 text-[rgb(218,218,218)] text-sm">
-                      <li>• Windows 11 (64-bit)</li>
-                      <li>• 8 GB RAM</li>
-                      <li>• SSD диск</li>
-                      <li>• Стабільне з'єднання</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </main>
+      <!-- УМОВИ ВИКОРИСТАННЯ -->
+      <section id="terms-section" class="py-16 relative bg-[rgb(17,17,19)] animate-fade-in" style="display:none;">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div class="flex items-center justify-between mb-8">
+            <h2 class="text-3xl font-bold text-white">Умови <span class="text-[rgb(218,255,1)]">використання</span></h2>
+            <button onclick="document.getElementById('terms-section').style.display='none';window.scrollTo({top:document.getElementById('terms-section').offsetTop-100,behavior:'smooth'});" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 16px;color:rgb(161,161,170);font-size:13px;cursor:pointer;">✕ Закрити</button>
+          </div>
+          <div style="background:rgb(26,28,30);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px;color:rgb(200,200,210);font-size:14px;line-height:1.8;">
+            <h3 style="color:white;font-size:18px;font-weight:700;margin-bottom:12px;">1. Загальні положення</h3>
+            <p style="margin-bottom:16px;">Використовуючи StakeBot, ви погоджуєтесь з цими умовами. Програма надається виключно для особистого використання.</p>
+            <h3 style="color:white;font-size:18px;font-weight:700;margin-bottom:12px;">2. Відмова від відповідальності</h3>
+            <p style="margin-bottom:16px;">StakeBot надається "ЯК Є". Розробники не несуть відповідальності за блокування акаунтів, втрату прогресу або будь-які інші наслідки використання програми.</p>
+            <h3 style="color:white;font-size:18px;font-weight:700;margin-bottom:12px;">3. Заборонені дії</h3>
+            <p style="margin-bottom:16px;">Забороняється: розповсюджувати, декомпілювати, модифікувати програму або передавати ліцензійний ключ третім особам.</p>
+            <h3 style="color:white;font-size:18px;font-weight:700;margin-bottom:12px;">4. Підписка та оплата</h3>
+            <p style="margin-bottom:16px;">Оплата за підписку не повертається після активації ліцензійного ключа. Підписка активується автоматично після введення ключа.</p>
+            <h3 style="color:white;font-size:18px;font-weight:700;margin-bottom:12px;">5. Зміни умов</h3>
+            <p>Ми залишаємо за собою право змінювати ці умови. Актуальна версія завжди доступна на сайті.</p>
+          </div>
+        </div>
+      </section>
+
       <footer class="relative bg-[rgb(26,28,30)] border-t border-[rgba(255,255,255,0.1)] ">
         <div class="container mx-auto px-6 py-16">
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -6426,7 +6338,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                     class="text-[rgb(161,161,170)] hover:text-[rgb(218,255,1)] transition-colors duration-200 text-sm">Можливості</a></li>
                 <li><a href="#pricing"
                     class="text-[rgb(161,161,170)] hover:text-[rgb(218,255,1)] transition-colors duration-200 text-sm">Тарифи</a></li>
-                <li><a href="#instructions"
+                <li><a href="#faq-section"
                     class="text-[rgb(161,161,170)] hover:text-[rgb(218,255,1)] transition-colors duration-200 text-sm">Інструкції</a></li>
               </ul>
             </div>
@@ -6435,8 +6347,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               <ul class="space-y-3">
                 <li><a href="#"
                     class="text-[rgb(161,161,170)] hover:text-[rgb(218,255,1)] transition-colors duration-200 text-sm"
-                    target="_blank" rel="noopener noreferrer">Discord сервер</a></li>
-                <li><a href="#"
+                    target="_blank" rel="noopener noreferrer" id="footer-discord-link">Discord сервер</a></li>
+                <li><a href="https://t.me/stake5bot" target="_blank" id="footer-telegram-link"
                     class="text-[rgb(161,161,170)] hover:text-[rgb(218,255,1)] transition-colors duration-200 text-sm"
                     target="_blank" rel="noopener noreferrer">Telegram канал</a></li>
                 <li><a href="#instructions"
@@ -6448,9 +6360,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             <div>
               <h3 class="text-white font-semibold mb-4">Правова інформація</h3>
               <ul class="space-y-3">
-                <li><a href="#"
+                <li><a href="#terms-section" onclick="event.preventDefault();var s=document.getElementById('terms-section');s.style.display=s.style.display==='none'?'block':'none';setTimeout(function(){s.scrollIntoView({behavior:'smooth'})},50);"
                     class="text-[rgb(161,161,170)] hover:text-[rgb(218,255,1)] transition-colors duration-200 text-sm">Умови використання</a></li>
-                <li><a href="#"
+                <li><a href="privacy.html" target="_blank"
                     class="text-[rgb(161,161,170)] hover:text-[rgb(218,255,1)] transition-colors duration-200 text-sm">Політика конфіденційності</a></li>
                 <li><a href="#instructions"
                     class="text-[rgb(161,161,170)] hover:text-[rgb(218,255,1)] transition-colors duration-200 text-sm">Відмова від відповідальності</a></li>
@@ -6502,12 +6414,16 @@ document.addEventListener("DOMContentLoaded", function () {
      SITE_CONFIG — змінюй тут усі посилання
   ============================================================ */
   var SITE_CONFIG = {
-    downloadUrl: "https://github.com/stake5bot/stake5bot.github.io/releases/download/v4.12/StakeBot.exe",
-    buyUrl:      "https://t.me/stake5bot",
-    telegramUrl: "https://t.me/stake5bot",
-    discordUrl:  "https://discord.gg/stake5bot",
-    appVersion:  "v4.12",
-    updateDate:  "06.03.2026",
+    downloadUrl:    "https://github.com/stake5bot/stake5bot.github.io/releases/download/v4.12/StakeBot.exe",
+    buyUrl:         "https://t.me/stake5bot",       // загальне посилання
+    buyProMonthly:  "https://t.me/stake5bot",       // PRO місяць
+    buyProYearly:   "https://t.me/stake5bot",       // PRO рік
+    buyBasicMonthly:"https://t.me/stake5bot",       // Basic місяць
+    buyBasicYearly: "https://t.me/stake5bot",       // Basic рік
+    telegramUrl:    "https://t.me/stake5bot",
+    discordUrl:     "https://discord.gg/stake5bot",
+    appVersion:     "v4.12",
+    updateDate:     "06.03.2026",
   };
 
   /* Підставляємо версію та дату */
@@ -6517,6 +6433,10 @@ document.addEventListener("DOMContentLoaded", function () {
   /* Telegram / Discord посилання */
   document.querySelectorAll('a[href*="t.me"], a[href*="telegram"]').forEach(function(a){ a.href = SITE_CONFIG.telegramUrl; });
   document.querySelectorAll('a[href*="discord"]').forEach(function(a){ a.href = SITE_CONFIG.discordUrl; });
+  var footerDiscord = document.getElementById('footer-discord-link');
+  var footerTelegram = document.getElementById('footer-telegram-link');
+  if (footerDiscord) footerDiscord.href = SITE_CONFIG.discordUrl;
+  if (footerTelegram) footerTelegram.href = SITE_CONFIG.telegramUrl;
   var faqTg = document.getElementById('faq-telegram-btn');
   var faqDc = document.getElementById('faq-discord-btn');
   if (faqTg) faqTg.href = SITE_CONFIG.telegramUrl;
@@ -6732,6 +6652,15 @@ document.addEventListener("DOMContentLoaded", function () {
     menuBtn.addEventListener('click', function() {
       menuBtn.classList.toggle('open');
     });
+  }
+
+  /* Купити зараз — різні URL залежно від тарифу і периоду */
+  function getBuyUrl(plan) {
+    var isYearly = document.getElementById('cyl-' + plan) &&
+                   document.getElementById('cyl-' + plan).classList.contains('flipped');
+    if (plan === 'pro')   return isYearly ? SITE_CONFIG.buyProYearly   : SITE_CONFIG.buyProMonthly;
+    if (plan === 'basic') return isYearly ? SITE_CONFIG.buyBasicYearly : SITE_CONFIG.buyBasicMonthly;
+    return SITE_CONFIG.buyUrl;
   }
 
 });
